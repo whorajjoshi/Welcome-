@@ -1,0 +1,96 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💼 CREDIT LINE - All-in-One Financial App</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height: 100%; overflow: hidden; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #f0f4ff, #ffffff); color: #333; }
+  .container { max-width: 480px; height: 100%; margin: auto; background: #fff; border-radius: 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); padding: 20px; text-align: center; position: relative; overflow-y: auto; }
+
+  h1 { color: #1a73e8; font-size: 2rem; margin-bottom: 8px; text-transform: uppercase; }
+  p { font-size: 0.95rem; line-height: 1.4; color: #555; margin-bottom: 10px; }
+
+  /* Floating bubbles */
+  .bubble { position: absolute; border-radius: 50%; opacity: 0.15; animation: float 6s infinite; }
+  .bubble1 { width: 40px; height: 40px; background: #1a73e8; top: -20px; left: 10%; }
+  .bubble2 { width: 30px; height: 30px; background: #34a853; top: -15px; right: 15%; animation-delay: 2s; }
+  .bubble3 { width: 35px; height: 35px; background: #e4405f; top: -18px; left: 70%; animation-delay: 4s; }
+  @keyframes float { 0% { transform: translateY(0); opacity:0.15; } 50% { transform: translateY(12px); opacity:0.3; } 100% { transform: translateY(0); opacity:0.15; } }
+
+  /* Social & CTA buttons */
+  .social-cta { display: flex; justify-content: center; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+  .social-cta a { flex: 1; text-decoration: none; padding: 12px 0; border-radius: 12px; font-weight: bold; color: #fff; text-align: center; transition: 0.3s; }
+
+  /* WhatsApp & Instagram same green */
+  .green-btn { background: #25D366; }
+  .green-btn:hover { background: #1da851; transform: translateY(-2px); }
+
+  /* Download button - new attractive gradient */
+  .cta-download { 
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
+    font-size: 1rem; 
+    flex: 1; 
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .cta-download:hover { 
+    background-position: right center; 
+    transform: translateY(-2px) scale(1.05); 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.35); 
+  }
+
+  /* Video container */
+  .video-container { width: 100%; max-width: 100%; margin: 12px auto; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.15); position: relative; z-index: 2; }
+  .video-container iframe { width: 100%; height: 220px; border: none; border-radius: 15px; }
+
+  /* Sound toggle button overlay */
+  .sound-btn { position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.6); color: #fff; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; z-index: 3; }
+
+  @media (max-width:480px){ .video-container iframe{ height:180px;} .social-cta a{flex:1 1 45%;} }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+
+  <h1>CREDIT LINE</h1>
+  <p>🚀 Sab Financial Services ek hi jagah! Instant loans, credit cards, insurance, demat & savings accounts aur mobile recharge – sab ek tap me!</p>
+
+  <p>🏢 <strong>Parent Company:</strong><br>ONLINEHUB INDIA<br>BARBODANIYA, RAJASTHAN 314401</p>
+  <p>📞 <strong>Contact:</strong><br>Phone: 7568311299<br>Email: helponlinehub@gmail.com</p>
+
+  <p>🌟 <strong>About Us:</strong><br>Credit Line ek smart aur professional financial app hai jo aapke paise ka kaam fast aur safe banata hai. Ab har financial service ek hi jagah, bina tension ke!</p>
+
+  <!-- Social + WhatsApp + Download Buttons -->
+  <div class="social-cta">
+    <a href="https://wa.me/917568311299?text=Hi%20Credit%20Line,%20I%20need%20assistance!" class="green-btn">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/creditlineapp?igsh=MXRidzZkY2F2Z2tlZQ==" class="green-btn">Instagram</a>
+    <a href="https://play.google.com/store/apps/details?id=com.creditline.app" class="cta-download">📲 DOWNLOAD CREDIT LINE APP</a>
+  </div>
+
+  <!-- Video embed -->
+  <div class="video-container">
+    <iframe id="video" src="https://www.youtube.com/embed/UqJb6YmuyEg?autoplay=1&mute=1&loop=1&playlist=UqJb6YmuyEg&controls=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen title="Credit Line Video"></iframe>
+    <div class="sound-btn" onclick="toggleSound()">🔈</div>
+  </div>
+
+</div>
+
+<script>
+  // Sound toggle
+  let muted = true;
+  function toggleSound() {
+    const iframe = document.getElementById('video');
+    muted = !muted;
+    const newSrc = `https://www.youtube.com/embed/UqJb6YmuyEg?autoplay=1&mute=${muted ? 1 : 0}&loop=1&playlist=UqJb6YmuyEg&controls=0&modestbranding=1`;
+    iframe.src = newSrc;
+    document.querySelector('.sound-btn').textContent = muted ? '🔈' : '🔊';
+  }
+</script>
+</body>
+</html>
